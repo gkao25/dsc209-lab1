@@ -23,11 +23,6 @@ h1 {
     text-align: center;
 }
 
-/* img {
-  max-width: 50%;
-  height: auto;
-} */
-
 .intro {
   display: flex;
   align-items: center;
@@ -62,7 +57,9 @@ nav {
 
 .tab {
   flex: 1;
-}
+  border-bottom: 0.4em solid transparent;
+  padding-bottom: 0.1em;
+} 
 
 nav a, a:link, a:visited {
   color: inherit;
@@ -70,11 +67,8 @@ nav a, a:link, a:visited {
 }
 
 nav a:hover {
-  border-bottom-width: 0.4em;
-  border-bottom-style: solid;
   border-bottom-color: var(--accent-color);
-  padding-bottom: 0.1em;
-  background-color: color-mix(in oklch, var(--accent-color), canvas 85%)
+  background-color: color-mix(in oklch, var(--accent-color), canvas 85%);
 }
 
 form {
@@ -167,4 +161,69 @@ article {
   grid-row: 2;
   margin: 0;
   font-size: 2em;
+}
+
+#projects-pie-plot {
+  min-width: 0;
+  max-width: 20em;
+  margin-block: 2em;
+  overflow: visible;
+}
+
+#projects-pie-plot path {
+  transition: 300ms;
+  cursor: pointer;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+.selected {
+  --color: oklch(25% 0 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
+
+path.selected {
+  fill: var(--color);
+}
+
+.swatch {
+  display: inline-block;
+  width: 1em;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color);
+  border-radius: 50%;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+  gap: 1em;
+  flex: 1;
+  border: 2px solid #ccc;
+  padding: 1em;
+}
+
+.legend-item {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 0.1em;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 2em;
+}
+
+.searchBar {
+  margin-bottom: 1em;
+  width: 100%;
+  height: 2em;
 }
