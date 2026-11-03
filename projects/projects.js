@@ -44,6 +44,7 @@ function renderPieChart(projectsGiven) {
       .attr("d", arc)
       .attr("fill", colors(i))
       .on("click", () => {
+        //select pie chart and filter
         selectedIndex = selectedIndex === i ? -1 : i;
 
         svg
@@ -75,10 +76,9 @@ function renderPieChart(projectsGiven) {
   });
 }
 
-// let selectedIndex = -1;
 renderPieChart(projects);
 
-// project search
+// project searchbar
 let query = "";
 let searchInput = document.querySelector(".searchBar");
 searchInput.addEventListener("input", (event) => {
