@@ -11,36 +11,9 @@ title.textContent = `Projects (${projects.length})`;
 // pie chart using D3.js
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 
-let colors = d3.scaleOrdinal(d3.schemeTableau10);
+let colors = d3.scaleOrdinal(d3.schemeSet3);
 let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
 let selectedIndex = -1;
-
-// let rolledData = d3.rollups(
-//   projects,
-//   (v) => v.length,
-//   (d) => d.year,
-// );
-
-// let data = rolledData.map(([year, count]) => {
-//   return { value: count, label: year };
-// });
-
-// let sliceGenerator = d3.pie().value((d) => d.value);
-// let arcData = sliceGenerator(data);
-// let arcs = arcData.map((d) => arcGenerator(d));
-
-// arcs.forEach((arc, idx) => {
-//   d3.select("svg").append("path").attr("d", arc).attr("fill", colors(idx));
-// });
-
-// let legend = d3.select(".legend");
-// data.forEach((d, idx) => {
-//   legend
-//     .append("li")
-//     .attr("style", `--color:${colors(idx)}`)
-//     .attr("class", "legend-item")
-//     .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`);
-// });
 
 // dynamic pie chart with search
 function renderPieChart(projectsGiven) {

@@ -13,14 +13,19 @@ body {
   padding: 30px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.1;
   text-wrap: balance;
 }
 
 h1 {
-    font-size: 400%;
-    text-align: center;
+  font-size: 400%;
+  text-align: center;
 }
 
 .intro {
@@ -59,9 +64,11 @@ nav {
   flex: 1;
   border-bottom: 0.4em solid transparent;
   padding-bottom: 0.1em;
-} 
+}
 
-nav a, a:link, a:visited {
+nav a,
+a:link,
+a:visited {
   color: inherit;
   text-decoration: none;
 }
@@ -146,9 +153,8 @@ article {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   text-align: center;
-  border: 2px solid oklch(80% 3% 200); 
+  border: 2px solid oklch(80% 3% 200);
   padding: 5px;
-
 }
 
 #profile-stats dt {
@@ -180,7 +186,7 @@ article {
 }
 
 .selected {
-  --color: oklch(25% 0 0) !important;
+  --color: var(--accent-color) !important;
 
   &:is(path) {
     fill: var(--color);
