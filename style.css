@@ -235,24 +235,22 @@ path.selected {
 }
 
 .stats {
+  display: flex;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
   text-align: center;
 }
 
 .stats dt {
-  display: flex;
   grid-row: 1;
   font-size: 0.8em;
   text-transform: uppercase;
 }
 
 .stats dd {
-  display: flex;
   grid-row: 2;
   margin: 0;
   font-size: 1.5em;
-  text-align: center;
 }
 
 .gridlines line {
